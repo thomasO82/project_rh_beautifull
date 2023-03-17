@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/puissance_4.css">
+    <title>Puissance_4</title>
+</head>
+
+<body>
+    <header>
+        <h1><img src="./img/Puissance_4.png" alt="Puissance_4"></h1>
+    </header>
+    <main>
+        <div id="grid">
+            <!-- A -->
+            <div onclick="addcoins(this)" class="column">
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+
+            </div>
+            <div onclick="addcoins(this)" class="column">
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+            </div>
+            <div onclick="addcoins(this)" class="column">
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+            </div>
+            <div onclick="addcoins(this)" class="column">
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vColumn vLine vDiagonalDown"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+                <div class="cell vLine vDiagonalUp"></div>
+            </div>
+            <div onclick="addcoins(this)" class="column">
+                <div class="cell vColumn"></div>
+                <div class="cell vColumn"></div>
+                <div class="cell vColumn"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div onclick="addcoins(this)" class="column">
+                <div class="cell vColumn"></div>
+                <div class="cell vColumn"></div>
+                <div class="cell vColumn"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div onclick="addcoins(this)" class="column">
+                <div class="cell vColumn"></div>
+                <div class="cell vColumn"></div>
+                <div class="cell vColumn"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+
+        </div>
+
+        <div id="set">
+            <div>
+                <div class="player">Score Joueur<div id="colorOne"></div>: <span id="score1"></span></div>
+                <div class="player">Score Joueur<div id="colorTwo"></div>: <span id="score2"></span></div>
+                <div class="player">Match nuls <img src="./img/poignee-de-main.png" alt="main" height="30px">: <span id="score1">5</span></div>
+                <div id="style"><div ></div><span id="victory"></span ></div>
+            </div>
+            <div>
+                <button>Rejouer</button>
+            </div>
+            <div>
+                <button class="cpu" onclick="cpuMode()">Joue contre CPU</button>
+            </div>
+            <div>
+                <button id="refresh" onclick="restart()"> Nouvelle manche</button>
+            </div>
+        </div>
+    </main>
+    <script src="/Asset/JavaScript/puissance_4.js"></script>
+</body>
+
+</html>
