@@ -59,6 +59,9 @@ exports.login = async(req)=>{
     } 
 }
 
+exports.testar = ()=>{
+    return 'yahou'
+}
 
 
 
