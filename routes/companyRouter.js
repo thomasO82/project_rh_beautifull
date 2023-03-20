@@ -3,10 +3,15 @@ const companyRouter = require("express").Router()
 const companyController = require("../controllers/companyController")
 
 companyRouter.get("/", authGuard, async (req, res)=>{
-    let employees = await companyController.getEmployeeFromCompany(req)
-    res.render('pages/home.twig',{
-        employees: employees
-    })
+    try {
+        let employees = await companyController.getEmployeeFromCompany(req)
+        res.render('pages/home.twig',{
+            employees: employees
+        })
+    } catch (error) {
+        res.send(error)
+    }
+   
 })
 
 companyRouter.get('/register', async (req, res) => {

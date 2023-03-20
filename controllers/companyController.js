@@ -3,10 +3,14 @@ const bcrypt = require('bcrypt')
 exports.getEmployeeFromCompany = async(req)=>{
     try {
         let company = await companyModel.findOne({_id: req.session.companyId}).populate({path: "employees"})
+        if (!company) {
+            console.log('re');
+            throw "non connecté"
+        }
         let employees = company.employees
         return employees
     } catch (error) {
-        res.send(error)
+       return error
     }
 }
 
@@ -40,7 +44,7 @@ exports.validateAndCreateCompany = async(req)=>{
     }
     if (Object.keys(errors).length == 0) {
         newCompany.save()
-        return
+        return newCompany
     }else{
         return errors
     }
