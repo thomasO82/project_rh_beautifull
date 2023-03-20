@@ -3,10 +3,13 @@ const bcrypt = require('bcrypt')
 exports.getEmployeeFromCompany = async(req)=>{
     try {
         let company = await companyModel.findOne({_id: req.session.companyId}).populate({path: "employees"})
+        if (!company) {
+            throw "non connecté"
+        }
         let employees = company.employees
         return employees
     } catch (error) {
-        res.send(error)
+       return error
     }
 }
 
@@ -40,7 +43,7 @@ exports.validateAndCreateCompany = async(req)=>{
     }
     if (Object.keys(errors).length == 0) {
         newCompany.save()
-        return
+        return newCompany
     }else{
         return errors
     }
@@ -59,6 +62,17 @@ exports.login = async(req)=>{
     } 
 }
 
+exports.zob = async (obj)=>{
+    try {
+        if (obj.status == 4) {
+            return "Vous etes admin"
+        }else{
+            return "vous n'etes rien"
+        }
+    } catch (error) {
+        return error
+    }
+}
 
 
 
